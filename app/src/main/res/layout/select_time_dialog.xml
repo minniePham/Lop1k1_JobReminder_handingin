@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn thời gian"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtngaydialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colornew"
+            android:textSize="20sp" />
+
+        <Button
+
+            android:id="@+id/btnNgayDialog"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chọn ngày" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtGioDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colornew"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnGioDialog"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chọn giờ" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOkDead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="OK" />
+</LinearLayout>

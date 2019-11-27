@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#021310</color>
+    <color name="colorAccent">#7BF2E9</color>
+    <color name="colorTextItem">#6B1414</color>
+    <color name="colorTextContent">#50887B</color>
+    <color name="bgTieuDe">#000033</color>
+    <color name="ftTieuDe">#e5e5ea</color>
+    <color name="bgDaXong">#c0e7cc</color>
+    <color name="bgChuaXong">#ff99b1</color>
+    <color name="bgDangLam">#ffff99</color>
+    <color name="vien">#9c2f9c</color>
+    <color name="gray">#262626</color>
+    <color name="ve">
+        <gradient
+            android:startColor="#7BF2E9"
+            android:endColor="#B65EBA"
+            android:angle="45"
+            android:type="linear"/>
+    </color>
+    <color name="colornew">#f7e6f7</color>
+</resources>

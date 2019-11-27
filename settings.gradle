@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='Lop1k1_JobReminder'
