@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30sp"
                 android:layout_weight="1"
-                android:text="Content"
+                android:text="THỜI GIAN BẮT ĐẦU"
                 android:textColor="@color/colorTextContent"
                 android:textSize="13sp" />
 

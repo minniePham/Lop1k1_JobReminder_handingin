@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vn.edu.lop1k.lop1k1_jobreminder">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.gallery.GalleryFragment"></activity>
+        <activity android:name=".AlarmScreenActivity"></activity>
+        <activity android:name=".ui.gallery.GalleryFragment" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -20,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true" />
     </application>
 
 </manifest>

@@ -7,19 +7,23 @@ public class Job implements Serializable {
     public String NoiDung;
     public String ThoiGianBatDau;
     public String ThoiGianKeThuc;
-    public  int TrangThai;
-    public  int lapLai;
+    public int id;
+    public int TrangThai;
+    public int lapLai;
+    public int isEnabled;
 
     public Job() {
     }
 
-    public Job(String tieuDe, String noiDung, String thoiGianBatDau, String thoiGianKeThuc, int trangThai, int lapLai) {
+    public Job(String tieuDe, String noiDung, String thoiGianBatDau, String thoiGianKeThuc, int id, int trangThai, int lapLai, int isEnabled) {
         TieuDe = tieuDe;
         NoiDung = noiDung;
         ThoiGianBatDau = thoiGianBatDau;
         ThoiGianKeThuc = thoiGianKeThuc;
+        this.id = id;
         TrangThai = trangThai;
         this.lapLai = lapLai;
+        this.isEnabled = isEnabled;
     }
 
     public String getTieuDe() {
@@ -54,6 +58,14 @@ public class Job implements Serializable {
         ThoiGianKeThuc = thoiGianKeThuc;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getTrangThai() {
         return TrangThai;
     }
@@ -68,5 +80,13 @@ public class Job implements Serializable {
 
     public void setLapLai(int lapLai) {
         this.lapLai = lapLai;
+    }
+
+    public int getIsEnabled() {
+        return isEnabled;
+    }
+
+    public void setIsEnabled(int isEnabled) {
+        this.isEnabled = isEnabled;
     }
 }

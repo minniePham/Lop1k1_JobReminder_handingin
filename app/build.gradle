@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
-
+ext {
+    supportLibraryVersion = '25.4.0'
+    grpcVersion = '1.4.0'
+}
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -9,6 +12,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -30,4 +34,30 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+
+    implementation('com.google.auth:google-auth-library-oauth2-http:0.7.0') {
+        exclude module: 'httpclient'
+    }
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
+    implementation 'com.google.protobuf:protobuf-java:3.3.1'
+    implementation "io.grpc:grpc-okhttp:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+
+    implementation files('libs\\proto-google-cloud-speech-v1_1beta1-0.1.21.jar')
+    implementation files('libs\\grpc-google-cloud-speech-v1-0.2.0.jar')
+    implementation files('libs\\protobuf-gradle-plugin-0.8.6.jar')
+
 }
+task copySecretKey(type: Copy) {
+    def File secretKey = file "$System.env.GOOGLE_APPLICATION_CREDENTIALS"
+    from secretKey.getParent()
+    include secretKey.getName()
+    into 'src/main/res/raw'
+    rename secretKey.getName(), "speechgoogleapi.json"
+}
+preBuild.dependsOn(copySecretKey)

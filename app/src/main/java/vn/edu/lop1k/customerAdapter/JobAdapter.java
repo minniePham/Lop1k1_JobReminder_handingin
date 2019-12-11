@@ -55,7 +55,7 @@ public class JobAdapter extends ArrayAdapter<Job> {
         });
 
         tieuDe.setText(job.getTieuDe());
-        noiDung.setText(job.getNoiDung());
+        noiDung.setText("Bắt đầu : "+ job.getThoiGianBatDau());
         if(job.getTrangThai()==-1)
         {
             tieuDe.setBackgroundColor(Color.RED);
@@ -77,7 +77,9 @@ public class JobAdapter extends ArrayAdapter<Job> {
         long kq= MainActivity.myDatabase.deleteJob(job);
         if(kq>0)
         {
+            GalleryFragment.cancelAlarms(getContext());
             Toast.makeText(context,"Thành công",Toast.LENGTH_LONG).show();
+
         }
         else
         {
@@ -85,7 +87,7 @@ public class JobAdapter extends ArrayAdapter<Job> {
         }
 
         GalleryFragment.arrJob.clear();
-        GalleryFragment.arrJob.addAll(MainActivity.myDatabase.getAllJob());
+        GalleryFragment.arrJob.addAll(MainActivity.myDatabase.getAllJob(1));
         notifyDataSetChanged();
     }
 

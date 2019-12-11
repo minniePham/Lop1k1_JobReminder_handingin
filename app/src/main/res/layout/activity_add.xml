@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddActivity">
+   >
 
     <TextView
         android:id="@+id/textView"
@@ -153,6 +153,7 @@
         android:textSize="13sp" />
 
     <RadioGroup
+        android:id="@+id/radGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -161,7 +162,7 @@
             android:id="@+id/radLapTheoPhut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Theo phút" />
+            android:text="Theo mỗi 2 phút" />
 
         <RadioButton
             android:textSize="13sp"
